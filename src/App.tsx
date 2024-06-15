@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native'
+import {TamaguiProvider, Text, View} from 'tamagui';
+
+import config from '../tamagui.config';
 
 function App() {
-  return (
-    <View>
-        <Text>Hi</Text>
-    </View>
-  );
+    return (
+        <TamaguiProvider config={config}>
+            <View flex={1} backgroundColor="$bg" theme={'dark'}>
+                <Text>Hello</Text>
+            </View>
+        </TamaguiProvider>
+    );
 }
 
 export default App;
