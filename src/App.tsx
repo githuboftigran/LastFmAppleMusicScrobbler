@@ -1,13 +1,16 @@
 import React from 'react';
-import {TamaguiProvider, Text, View} from 'tamagui';
+import {TamaguiProvider, View} from 'tamagui';
 
 import config from '../tamagui.config';
+import AuthenticationScreen from "@/src/screens/AuthenticationScreen";
+
+console.log(JSON.stringify(config, null, 2));
 
 function App() {
     return (
         <TamaguiProvider config={config}>
             <View flex={1} backgroundColor="$bg" theme={'dark'}>
-                <Text>Hello</Text>
+                <AuthenticationScreen/>
             </View>
         </TamaguiProvider>
     );

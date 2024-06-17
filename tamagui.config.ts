@@ -22,7 +22,11 @@ const interFont = createFont({
     size: {
         1: 12,
         2: 14,
-        3: 15,
+        3: 16,
+        3: 18,
+        4: 20,
+        5: 24,
+        6: 28,
     },
     lineHeight: {
         // 1 will be 22
@@ -58,10 +62,12 @@ const size = {
     true: 12,
     4: 16,
     5: 20,
+    6: 24,
+    button: 40,
 };
 export const tokens = createTokens({
     size,
-    space: {...size, '-1': -5, '-2': -10},
+    space: {...size},
     radius: {0: 0, 1: 3},
     zIndex: {0: 0, 1: 100, 2: 200},
     color: {
@@ -81,10 +87,16 @@ const config = createTamagui({
     themes: {
         light: {
             bg: '#f2f2f2',
+            bgSecondary: '#b4b4b4',
+            accent: '#d51007',
+            accentDisabled: '#fa726b',
             color: tokens.color.black,
         },
         dark: {
             bg: '#111',
+            bgSecondary: '#444',
+            accent: '#d51007',
+            accentDisabled: '#630803',
             color: tokens.color.white,
         },
     },
@@ -114,6 +126,7 @@ const config = createTamagui({
         px: 'paddingHorizontal',
         f: 'flex',
         m: 'margin',
+        mb: 'marginBottom',
         w: 'width',
     } as const,
     // Change the default props for any styled() component with a name.
